@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAIVisionConsole", "OpenAIVisionConsole\OpenAIVisionConsole.csproj", "{EF501425-D3C2-4656-B37C-2A5AB0E9BA54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF501425-D3C2-4656-B37C-2A5AB0E9BA54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF501425-D3C2-4656-B37C-2A5AB0E9BA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF501425-D3C2-4656-B37C-2A5AB0E9BA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF501425-D3C2-4656-B37C-2A5AB0E9BA54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4388D8DC-6A1E-4472-ABF4-5F017FACC74E}
+	EndGlobalSection
+EndGlobal
