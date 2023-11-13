@@ -48,31 +48,14 @@ while (isRunning)
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                VisionRequest visionRequest = new()
-                {
-                    Messages = new List<ChatMessage>
+                VisionRequest visionRequest = new(new List<ChatMessage>
                     {
-                        new ChatMessage
+                        new ChatMessage(new List<MessageContent>
                         {
-                            Content = new List<MessageContent>
-                            {
-                                new MessageContent
-                                {
-                                    Type = "text",
-                                    Text = "What's in this image?"
-                                },
-                                new MessageContent
-                                {
-                                    Type = "image_url",
-                                    ImageUrl = new ImageUrl
-                                    {
-                                        Url = $"data:image/{fileExtension};base64,{imageAsBase64String}"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                };
+                            new MessageContent("text", "What's in this image?", null),
+                            new MessageContent("image_url", null, new ImageUrl($"data:image/{fileExtension};base64,{imageAsBase64String}"))
+                        })
+                    });
 
                 string json = JsonSerializer.Serialize(visionRequest, jsonOptions);
 

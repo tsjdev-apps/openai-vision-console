@@ -5,14 +5,10 @@ namespace OpenAIVisionConsole.Models;
 /// <summary>
 ///     Represents an image URL.
 /// </summary>
-internal class ImageUrl
+/// <param name="Url"> The URL of the image. </param>
+internal record ImageUrl(
+    [property: JsonPropertyName("url")] string Url)
 {
-    /// <summary>
-    ///     The URL of the image.
-    /// </summary>
-    [JsonPropertyName("url")]
-    public required string Url { get; set; }
-
     /// <summary>
     ///     The detail of the image.
     /// </summary>

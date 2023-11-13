@@ -2,27 +2,15 @@
 
 namespace OpenAIVisionConsole.Models;
 
+
 /// <summary>
 ///     Represents the details of a finish 
 ///     associated with a choice.
 /// </summary>
-internal class FinishDetailInfo
-{
-    /// <summary>
-    ///     The type of finish.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public string? Type { get; set; }
-
-    /// <summary>
-    ///     The message associated with the finish.
-    /// </summary>
-    [JsonPropertyName("message")]
-    public Message? Message { get; set; }
-
-    /// <summary>
-    ///     The details of the next choice.
-    /// </summary>
-    [JsonPropertyName("next_choice")]
-    public Choice? NextChoice { get; set; }
-}
+/// <param name="Type"> The type of finish. </param>
+/// <param name="Message"> The message associated with the finish. </param>
+/// <param name="NextChoice"> The details of the next choice. </param>
+internal record FinishDetailInfo(
+    [property: JsonPropertyName("type")] string? Type, 
+    [property: JsonPropertyName("message")] Message? Message, 
+    [property: JsonPropertyName("next_choice")] Choice? NextChoice);
