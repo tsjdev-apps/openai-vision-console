@@ -2,27 +2,15 @@
 
 namespace OpenAIVisionConsole.Models;
 
+
 /// <summary>
 ///     Represents the content of a 
 ///     message in a conversation.
 /// </summary>
-internal class MessageContent
-{
-    /// <summary>
-    ///     The type of the message content.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public string Type { get; set; } = string.Empty;
-
-    /// <summary>
-    ///     The text content of the message.
-    /// </summary>
-    [JsonPropertyName("text")]
-    public string? Text { get; set; } = null;
-
-    /// <summary>
-    ///     The image URL associated with the message.
-    /// </summary>
-    [JsonPropertyName("image_url")]
-    public ImageUrl? ImageUrl { get; set; } = null;
-}
+/// <param name="Type"> The type of the message content. </param>
+/// <param name="Text"> The text content of the message. </param>
+/// <param name="ImageUrl"> The image URL associated with the message. </param>
+internal record MessageContent(
+    [property: JsonPropertyName("type")] string? Type, 
+    [property: JsonPropertyName("text")] string? Text, 
+    [property: JsonPropertyName("image_url")] ImageUrl? ImageUrl);

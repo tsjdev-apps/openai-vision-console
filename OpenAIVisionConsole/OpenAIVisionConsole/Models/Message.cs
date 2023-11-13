@@ -2,20 +2,12 @@
 
 namespace OpenAIVisionConsole.Models;
 
+
 /// <summary>
 ///     Represents a message in a conversation.
 /// </summary>
-internal class Message
-{
-    /// <summary>
-    ///     The role of the message.
-    /// </summary>
-    [JsonPropertyName("role")]
-    public string? Role { get; set; }
-
-    /// <summary>
-    ///     The content of the message.
-    /// </summary>
-    [JsonPropertyName("content")]
-    public string? Content { get; set; }
-}
+/// <param name="Role"> The role of the message. </param>
+/// <param name="Content"> The content of the message. </param>
+internal record Message(
+    [property: JsonPropertyName("role")] string? Role, 
+    [property: JsonPropertyName("content")] string? Content);
