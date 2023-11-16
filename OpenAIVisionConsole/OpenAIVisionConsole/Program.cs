@@ -9,6 +9,8 @@ using System.Text.Json.Serialization;
 bool isRunning = true;
 
 string completionsEndpoint = "https://api.openai.com/v1/chat/completions";
+
+// Settings for System.Text.Json.JsonSerializer
 JsonSerializerOptions jsonOptions = new()
 {
     WriteIndented = true,
@@ -50,10 +52,10 @@ while (isRunning)
 
                 VisionRequest visionRequest = new(new List<ChatMessage>
                     {
-                        new ChatMessage(new List<MessageContent>
+                        new(new List<MessageContent>
                         {
-                            new MessageContent("text", "What's in this image?", null),
-                            new MessageContent("image_url", null, new ImageUrl($"data:image/{fileExtension};base64,{imageAsBase64String}"))
+                            new("text", "What's in this image?", null),
+                            new("image_url", null, new ImageUrl($"data:image/{fileExtension};base64,{imageAsBase64String}"))
                         })
                     });
 
